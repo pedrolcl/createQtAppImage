@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.19)
 
-project(createQtAppImage
+project( createQtAppImage
     VERSION 0.0.1
     LANGUAGES CXX
 )
@@ -42,7 +42,7 @@ install( FILES ${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.desktop
          DESTINATION ${CMAKE_INSTALL_DATADIR}/applications )
 
 qt_generate_deploy_app_script(
-    TARGET createQtAppImage
+    TARGET ${PROJECT_NAME}
     OUTPUT_SCRIPT deploy_script
     INCLUDE_PLUGINS xcb wayland
     NO_UNSUPPORTED_PLATFORM_ERROR
@@ -61,3 +61,10 @@ install( CODE
         ARCH \"${CMAKE_SYSTEM_PROCESSOR}\"
    )"
 )
+
+if (DEFINED ENV{GITHUB_OUTPUT})
+    file(APPEND
+        "$ENV{GITHUB_OUTPUT}"
+        "config_version=${PROJECT_VERSION}\n"
+    )
+endif()
