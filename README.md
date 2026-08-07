@@ -1,6 +1,8 @@
 # createQtAppImage
 Create a Linux AppImage of a Qt Application with CMake
 
+[![Linux CI](https://github.com/pedrolcl/createQtAppImage/actions/workflows/linux-ci.yml/badge.svg)](https://github.com/pedrolcl/createQtAppImage/actions/workflows/linux-ci.yml)
+
 This project is a proof of concept and a recipe for the creation of an AppImage for Qt applications using CMake <= 4.2. 
 Since CMake 4.2 there is an AppImage CPack generator, so this is not needed anymore. But if your CMake version is older, 
 like in the ubuntu-22.04 GitHub action runner, then you need to use something like this in order to generate your AppImage.
