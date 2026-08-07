@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=createQtAppImage
+Exec=createQtAppImage
+Icon=createQtAppImage
+Terminal=false
+Categories=Utility;
+StartupWMClass=createQtAppImage
