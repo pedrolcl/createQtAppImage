@@ -26,10 +26,16 @@ jobs:
       with:
         submodules: true
 
+    - name: '${{ matrix.icon }} Setup Python'
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.14'
+
     - name: '${{ matrix.icon }} Install Qt'
       uses: jurplel/install-qt-action@v4
       with:
-        version: '6.11.1'
+        version: '6.11.2'
+        setup-python: false
 
     - name: '${{ matrix.icon }} Configure CMake'
       id: configuration
